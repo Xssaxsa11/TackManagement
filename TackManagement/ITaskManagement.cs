@@ -2,17 +2,21 @@
 
 namespace TackManagement
 {
-    internal interface ITaskManagement
+    public interface ITaskManagement
     {
-        string AddTask(string taskName, string tasktime);
+        void AddTask(string taskName, string tasktime);
         
         void DeleteTask(int numoftask, string tasktime);//Будет хранится лист с удаленными задачами
 
-        void CompletedTasks(int numoftask, int taskcompletetime);
+        void CompletedTasks();//Вывод заданий
 
         void ShowAllTasks();
 
+        void CompleteTask(int numoftask,string time);
+
         void ShowOnlyOneTask(int numoftask);
+
+        void EditTask(int numoftask);
 
         event Action ShowCompletedTask;
 
